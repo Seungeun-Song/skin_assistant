@@ -1,0 +1,39 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/album.css')}}">
+  <title>Image Gallery</title>
+</head>
+
+    
+    
+
+
+
+
+
+
+<div class="container">
+    <div class="images">
+      <div class="imageFlex1">
+        {% for pic in pics %}
+        <img src="{{ url_for('static', filename='images/' +im + '/'+ pic)}}">
+                           <br> {{pic}}       <br>             
+        {% endfor %}
+
+      </div>
+    </div>
+</div>
+
+
+
+
+
+https://kkamikoon.tistory.com/154 - for문 예제
+https://velog.io/@miiunii/HTMLCSS-Grid%EB%A1%9C-Image-Gallery-%EB%A7%8C%EB%93%A4%EA%B8%B0
+https://gomguk.tistory.com/43
+https://frhyme.github.io/python-lib/flask_matplotlib/
