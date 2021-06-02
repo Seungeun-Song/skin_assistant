@@ -1,7 +1,7 @@
 import pymysql
 
 test_db = pymysql.connect(user='root', passwd='team09', host='35.180.122.212', db='mydb', charset='utf8')
-cursor = test_db.cursor()
+cursor = test_db.cursor(pymysql.cursors.DictCursor)
 sql = "SELECT img_url1 FROM user_face"
 cursor.execute(sql)
 result = cursor.fetchall()

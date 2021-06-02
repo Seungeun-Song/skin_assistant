@@ -1,7 +1,8 @@
 {% extends "index.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/Graph.css')}}" media="screen">
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/graph.css')}}" media="screen">
 {% endblock %}
     
     
@@ -9,36 +10,109 @@
 
 
 {% block contents %}
-    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-2d16">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-left-cell u-size-27 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <div class="u-container-style u-gradient u-group u-shape-rectangle u-group-1">
-                  <div class="u-container-layout u-container-layout-2">
-                    <div class="u-container-style u-group u-group-2">
-                      <div class="u-container-layout u-valign-top-lg u-valign-top-md">
-                        <div class="u-border-3 u-border-white u-line u-line-horizontal u-line-1"></div>
-                        <p class="u-text u-text-1">Graph</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <section class="u-clearfix u-section-1" id="sec-47db">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-1">[오늘의 기록]</h2>
+        <img class="u-image u-image-1" src="{{ url_for('static', filename='img/face.png')}}" data-image-width="832" data-image-height="594">
+          
+   
+          
+        {% for d in results %}
+        {% if d["sym_id"] == 2 %}
+        <h6 class="u-text u-text-2">{{d.cheek_L}}</h6>
+        <h6 class="u-text u-text-3">{{d.cheek_R}}</h6>
+        <h6 class="u-text u-text-4">{{d.forehead}}</h6>
+        <h6 class="u-text u-text-5">{{d.chin}}</h6>
+        {% endif %}
+        {% endfor %}    
+        
+          
+        {% for d in results %}
+        {% if d["sym_id"] == 3 %}  
+        <h6 class="u-text u-text-6">{{d.cheek_L}}</h6>
+        <h6 class="u-text u-text-7">{{d.cheek_R}}</h6>
+        <h6 class="u-text u-text-8">{{d.forehead}}</h6>
+        <h6 class="u-text u-text-9">{{d.chin}}</h6>
+        {% endif %}
+        {% endfor %}  
+
+          
+
+        <h6 class="u-text u-text-10">11</h6>
+        <h6 class="u-text u-text-11">13</h6>
+        <h6 class="u-text u-text-12">15</h6>
+        <h6 class="u-text u-text-13">12</h6>
+          
+        
+        {% for d in results %}
+        {% if d["sym_id"] == 4 %}    
+        <h6 class="u-text u-text-14">{{d.cheek_L}}</h6>
+        <h6 class="u-text u-text-15">{{d.cheek_R}}</h6>
+        {% endif %}
+        {% endfor %} 
+          
+
+        {% for d in results %}
+        {% if d["sym_id"] == 5 %}           
+        <h6 class="u-text u-text-16">없음</h6>
+        <h6 class="u-text u-text-17">없음</h6>
+        {% endif %}
+        {% endfor %}          
+         
             </div>
-            <div class="u-container-style u-layout-cell u-right-cell u-size-33 u-layout-cell-2">
-              <div class="u-container-layout u-container-layout-4">
-                <div class="u-container-style u-group u-palette-2-base u-shape-rectangle u-group-3">
-                  <div class="u-container-layout u-container-layout-5">
-                    <img src="{{url_for('static',filename='images/bdefcaf37d5bdc8540a6909a6a705d75.jpg')}}" alt="" class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-default u-image-1" data-image-width="564" data-image-height="794">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </section>
+          
+        {% for d in results %}
+        {% if d["sym_id"] == 2 %}        
+        <h6 class="u-text u-text-18">{{d.nose}}</h6>
+        {% endif %}
+        {% endfor %}             
+         
+        {% for d in results %}
+        {% if d["sym_id"] == 3 %}        
+        <h6 class="u-text u-text-19">{{d.nose}}</h6>
+        {% endif %}
+        {% endfor %}
+        <h6 class="u-text u-text-20">14</h6>
       </div>
     </section>
-    
+ 
+    <section class="u-align-left u-clearfix u-section-2" id="sec-5006">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-custom-color-1 u-text-1">증 상</h1>
+        <h1 class="u-text u-text-custom-color-1 u-text-2">원 인</h1>
+        <h1 class="u-text u-text-custom-color-1 u-text-3">주의사항</h1>
+        {% for i in result %}
+            <div>
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-4">트러블 :</h2>
+                <h6 class="u-custom-font u-font-montserrat u-text u-text-5">{{i.sym_name}}</h6>
+                <p class="u-text u-text-10">{{i.symptom}}</p>            
+            </div>
+        {% endfor %} 
+          
+        {% for i in result %}  
+            <div>
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-6">트러블 :</h2>
+                <h6 class="u-custom-font u-font-montserrat u-text u-text-7">{{i.sym_name}}</h6>
+                <p class="u-text u-text-11">{{i.cause}}</p>                
+             </div>
+        {% endfor %}
+          
+        {% for i in result %}
+            <div>
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-8">트러블 :</h2>
+                <h6 class="u-custom-font u-font-montserrat u-text u-text-9">{{i.sym_name}}</h6>
+                <p class="u-text u-text-12">{{i.caution}}</p>             
+             </div>
+
+        {% endfor %}
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-3" id="sec-13ed">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-0f2f">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+
 {% endblock contents %}   

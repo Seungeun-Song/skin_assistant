@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/graph.css')}}" media="screen">
+{% endblock %}
+    
+    
+
+
+
+{% block contents %}
+
+    <section class="u-clearfix u-section-1" id="sec-47db">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-1">[오늘의 기록 : n월 nn일]</h2>
+        <img class="u-image u-image-1" src="{{ url_for('static', filename='img/face.png')}}" data-image-width="832" data-image-height="594">
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-2" id="sec-5006">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-custom-color-1 u-text-1">증 상</h1>
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-2">트러블 :</h2>
+        <h6 class="u-custom-font u-font-montserrat u-text u-text-3">구진성 여드름</h6>
+        <p class="u-text u-text-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+        <h1 class="u-text u-text-custom-color-1 u-text-5">원 인</h1>
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-6">트러블 :</h2>
+        <h6 class="u-custom-font u-font-montserrat u-text u-text-7">구진성 여드름</h6>
+        <p class="u-text u-text-8">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+        <h1 class="u-text u-text-custom-color-1 u-text-9">주의사항</h1>
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-10">트러블 :</h2>
+        <h6 class="u-custom-font u-font-montserrat u-text u-text-11">구진성 여드름</h6>
+        <p class="u-text u-text-12">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-3" id="sec-13ed">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-0f2f">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    
+{% endblock contents %}   
